@@ -1,0 +1,548 @@
+/*==========================
+1.variable css
+============================*/
+:root
+{
+      
+    /*------------ Colors -----------*/
+    
+    --darkBlue:#2D314D;
+    --limeGreen:#31D35C;
+    --brightCyan:#2BB7DA;
+    --grayishBlue:#9698A6;
+    --lightGrayishBlue:#F3F4F6;
+    --veryLightGray:#FAFAFA;
+    --white:#FFFFFF;
+
+    /*---------- Font & Typographgy --------*/
+    
+    --body-font: 'Public Sans', sans-serif;
+    --font-sm: 0.875rem;
+    --font-med:1.125rem;
+    --font-lg:1.25rem;
+    --font-x-lg:3.25rem;
+
+
+}
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    line-height: 1.3;
+    font-size: var(--font-med);
+    color: var(--grayishBlue);
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul
+{
+    margin: 0;
+}
+
+h1,h2,h3
+{
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--darkBlue);
+}
+
+h1
+{
+    font-weight:300;
+    font-size: 2.31rem;
+    line-height: 1.15;
+    color: var(--darkBlue);
+    margin-bottom: 1.5rem;
+}
+h2
+{
+    font-size: 1.875rem;
+    margin-bottom: 1.5625rem;
+}
+
+p
+{
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+}
+
+a, a:hover, a:visited
+{
+    text-decoration: none;
+}
+ul
+{
+    padding: 0;
+    list-style: none;
+}
+
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+.container
+{
+    max-width: 69.375rem;
+    margin: 0 auto;     
+}
+.c-p-all
+{
+    padding-top: 4.375rem;
+    padding-right: 1.5rem;
+    padding-bottom: 4.375rem;
+    padding-left:1.5rem;
+}
+.c-p-x
+{
+    padding-left:1.5rem;
+    padding-right: 1.5rem;  
+}
+.c-p-y
+{
+    padding-bottom: 4.375rem;
+    padding-top: 4.375rem;
+}
+.c-p-t
+{
+    padding-top: 4.375rem;
+}
+.c-p-r
+{
+    padding-right: 1.5rem;
+}
+.c-p-b
+{
+    padding-bottom: 4.375rem;
+}
+.c-p-l
+{
+    padding-left:1.5rem;
+}
+.d-flex
+{
+    display: flex;
+}
+.justify-between
+{
+    justify-content: space-between;
+}
+.justify-center
+{
+    justify-content: center;
+}
+.align-center
+{
+    align-items: center;
+}
+.btn
+{
+    padding: 0.875rem 2.1875rem;
+    background: linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+    color: var(--white);
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: var(--font-sm);
+    transition: opacity 300ms ease-in-out;
+    display: inline-block;
+}
+
+.noscroll
+{
+    overflow: hidden;
+}
+
+
+
+/*==========================
+2.Class css
+============================*/
+
+/*================== Header Section Start ===================*/
+
+.overlay
+{
+    opacity: 0;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(#2D314D,transparent);
+}
+
+nav{
+    position: relative;
+    background-color: var(--white);
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+}
+
+.logo img
+{
+    width: 8.8125rem;
+    height: 1.375rem;
+}
+
+.hamburger span
+{
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--darkBlue);
+    transition: all 300ms ease-in-out;
+    transform-origin: 3px 1px;
+}
+
+.hamburger span:not(:last-child)
+{
+    margin-bottom: 5px;
+}
+
+.open .header__toggle span:first-child
+{
+    transform: rotate(45deg);
+}
+
+.open .header__toggle span:nth-child(2)
+{
+    opacity: 0;
+}
+.open .header__toggle span:last-child
+{
+    transform: rotate(-45deg);
+}
+
+
+.header__links
+{
+    display: none;
+    z-index: 99999;
+}
+
+.header__links a
+{
+    position: relative;
+    font-size: var(--font-sm);
+    color: var(--grayishBlue);
+    transition: color 300ms ease-in-out;
+}
+.header__links a::before
+{
+    content:"";
+    display: block;
+    position: absolute;
+    height: 5px;
+    background:linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+.header__links a:hover::before
+{
+    color: var(--darkBlue);
+    opacity: 1;
+}
+.button
+{
+    display: none;
+}
+.btn:hover
+{
+    opacity: 0.75;
+}
+
+.header__menu
+{
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 1.625rem;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    z-index: 9999;
+}
+.header__menu a
+{
+    
+    display: block;
+    padding: 0.625rem;
+    color: var(--darkBlue);
+    text-align: center;
+}
+
+
+/*================= Header Section Finish =================*/
+
+/*================= Hero Section Start ====================*/
+.hero
+{
+    background: var(--veryLightGray);
+}
+.hero__img
+{
+    position: relative;
+    background-image: url(../images/bg-intro-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+}
+.hero__img::before
+{
+    content:"";
+    position: absolute;
+    height: 100%;
+    background-image: url(../images/bg-intro-desktop.svg);
+    /* background-size: 93%; */
+    background-repeat: no-repeat;
+    background-position: center bottom; 
+}
+
+.hero__img::after
+{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/image-mockups.png);
+    background-size: 93%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.hero__text
+{
+    text-align: center;
+}
+
+
+/*================= Hero Section Finish ==================*/
+
+/*================= Feature Section Start =================*/
+
+.features
+{
+    background-color: var(--lightGrayishBlue);
+    text-align: center;
+}
+.feature__intro
+{
+    margin-bottom: 3.75rem;
+}
+
+.feature__item
+{
+    padding: 0.9375rem;
+    box-sizing: border-box;
+}
+.feature__icon
+{
+    margin-bottom: 1.875rem;
+}
+.feature__title
+{
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color:var(--darkBlue);
+    margin-bottom: 1rem;
+}
+.feature__description
+{
+    font-size: 0.875rem;
+}
+/*================= Feature Section Finish =================*/
+
+/*================= Article Section Start =================*/
+.articles
+{
+    background-color: var(--veryLightGray);
+}
+.article__grid
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
+}
+
+.article__item
+{
+    border-radius: 0.3125rem;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 3px 12px rgba(0,0,0,.15);
+    transition: all 150ms ease-in-out;  
+}
+.article__item:hover
+{
+    transform: scale(1.05);
+}
+.article__image
+{
+    
+    height: 12.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.article__image.img__1
+{
+    background-image: url(../images/image-currency.jpg);
+}
+.article__image.img__2
+{
+    background-image: url(../images/image-restaurant.jpg);
+}
+.article__image.img__3
+{
+    background-image: url(../images/image-plane.jpg);
+}
+.article__image.img__4
+{
+    background-image: url(../images/image-confetti.jpg);
+}
+.article__text
+{
+    padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+    background-color: var(--white);
+    color: var(--grayishBlue);
+}
+.article__author
+{
+    font-size: 0.625rem;
+    margin-bottom: 0.75rem;
+}
+.article__title
+{
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    color: var(--darkBlue);
+    margin-bottom: 0.5rem;
+}
+.article__description
+{
+    font-size: 0.8125rem;
+}
+
+/*================= Article Section Finish =================*/
+
+/*================= Footer Section Start =================*/
+
+footer
+{
+    background-color: var(--darkBlue);
+    color: var(--white);
+    padding: 2.5rem;
+    text-align: center;
+}
+footer a
+{
+    color:var(--white);
+}
+.footer__logo
+{ 
+    display: inline-block;
+}
+
+.footer__social a
+{
+    display: inline-block;
+    height: 1.25rem;
+}
+.footer__social svg path
+{
+    transition: fill 150ms ease-in-out;
+}
+.footer__social a:hover svg path
+{
+    fill: var(--limeGreen);
+}
+.footer__social a:not(:last-child)
+{
+    display: inline-block;
+    margin-right: 1rem;
+}
+.footer__links
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9375rem;
+}
+.footer__links a
+{
+    line-height: 2.25;
+    transition: color 150ms ease-in-out;
+}
+.footer__links a:hover
+{
+    color: var(--limeGreen);
+}
+.footer__copyright
+{
+    font-size: 0.8125rem;
+    color: var(--grayishBlue);
+}
+
+/*================= Footer Section Finish =================*/
+
+/*==========================
+3.Custom Animation css
+============================*/
+.fade
+{
+    visibility: hidden;
+}
+
+
+@keyframes fade-in{
+    from{
+        visibility: hidden;
+        opacity: 0;
+    }
+    1%{
+        visibility: visible;
+        opacity: 0;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.fade-in{
+    animation: fade-in 200ms ease-in-out forwards;
+}
+
+@keyframes fade-out{
+    from{
+        visibility: visible;
+        opacity: 1;
+    }
+    99%
+    {
+        visibility: visible;
+        opacity: 0;
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+.fade-out{
+    animation: fade-out 200ms ease-in-out forwards;
+}

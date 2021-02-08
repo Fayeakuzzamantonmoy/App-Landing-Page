@@ -1,0 +1,263 @@
+/*==========================
+1. for Tablet Device
+============================*/
+@media all and (min-width:468px){
+    
+    /*------------ Header ------------*/
+    .header__links
+    {
+        display: none;
+    }
+
+    .button
+    {
+        display: none;
+    }
+
+    .hamburger
+    {
+        display: block;
+    }
+    /*---------- Hero ------------*/
+    .hero__img
+    {
+        min-height: 25rem;
+        background-position: center 60%;
+    }
+    .hero__img::after
+    {
+        background-size: 52%;
+    }
+    /*---------- Features ------------*/
+    .feature__grid
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .feature__item
+    {
+        flex: 0 0 50%;
+    }
+    
+    /*---------- Features ------------*/
+
+    .features
+    {
+        text-align: left;
+    }
+
+    /*---------- Articles ------------*/
+
+    .article__grid
+    {
+        grid-template-columns: repeat(2, 1fr);    
+    }   
+
+}
+
+@media all and (max-width:467px)
+{
+    .footer__logo
+    {
+        margin-bottom: 1.875rem;
+    }
+    .footer__social
+    {
+        margin-bottom: 1.875rem;
+    }
+    .footer__links.col2
+    {
+        margin-bottom: 1.875rem;
+    }
+    
+    .footer__cta .btn
+    {
+        margin-bottom: 1.875rem;
+    }
+
+}    
+/*==========================
+2.for PC or large device
+============================*/
+@media all and (min-width:768px){
+    
+    /*---------- Global ------------*/
+    
+    body
+    {
+        font-size: var(--font-med);
+    }
+
+    .hero__text h1
+    {
+        font-size: var(--font-x-lg);
+    }
+
+    h2
+    {
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+    .c-p-all
+    {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }  
+    .c-p-y
+    {
+        padding-bottom: 6rem;
+        padding-top: 6rem;
+    }  
+    .c-p-t
+    {
+        padding-top: 6rem;
+    }
+    .c-p-b
+    {
+        padding-bottom: 6rem;
+    }
+    /*------------ Header ------------*/
+    
+    .hamburger
+    {
+        display: none;
+    }
+
+    .button,
+    .header__links
+    {
+        display: block;
+    }
+
+    .item
+    {
+        margin-right: 32px;   
+    }
+
+    .header__links a:nth-child(5)
+    {
+        margin-right: 0 !important;
+    }
+    
+    /*---------- Hero ------------*/
+    
+    .hero .container
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero__img
+    {
+        flex: 3;
+        order: 2;
+        height: 41rem;
+        background-image: none;
+    }
+
+    .hero__img::before
+    {
+        width: 150%;
+        background-size: 122%;
+        background-repeat: no-repeat;
+        background-position: 0% 83%;
+    }
+
+    .hero__img::after
+    {
+        width: 120%;
+        height: 122%;
+        background-image: url(../images/image-mockups.png);
+        background-size: 94%;
+        background-repeat: no-repeat;
+        background-position: center 150%;
+        left: 22%;
+    }
+
+    .hero__text
+    {
+        flex: 2;
+        order: 1;
+        text-align: left;
+    }
+    
+    /*---------- Features ------------*/
+
+
+    .feature__item
+    {
+        flex: 1;
+    }
+    .feature__intro
+    {
+       width: 60%; 
+    }
+    .feature__icon
+    {
+        margin-bottom: 2.75rem;
+    }
+    .feature__title
+    {
+        font-size: 1.5rem;
+        margin-bottom: 2.125rem;
+    }
+    
+    /*---------- Articles ------------*/
+
+    .article__grid
+    {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .article__text
+    {
+        padding: 1.875rem 1.5625rem;
+    }
+
+    /*---------- Footer ------------*/
+
+    footer .container
+    {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 3fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+            "logo links1 links2 cta"
+            "social links1 links2 copyright";
+        gap: 1rem;    
+        justify-items: start;    
+    }
+    .footer__logo
+    {
+        grid-area: logo;
+    }
+    .footer__social
+    {
+        grid-area: social;
+        align-self: end;
+    }
+    .footer__links
+    {
+        justify-content: space-between;
+        align-items: start;
+    }
+    .footer__links.col1
+    {
+        grid-area: links1;
+    }
+    .footer__links.col2
+    {
+        grid-area: links2;
+    }
+    .footer__cta
+    {
+        grid-area: cta;
+        text-align: right;
+        justify-self: end;
+    }
+    .footer__copyright
+    {
+        grid-area: copyright;
+        align-self: end;
+        justify-self: end;
+    }
+}
